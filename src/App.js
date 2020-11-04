@@ -6,7 +6,14 @@ import ItensSacola from './components/ItensSacola.js'
 import Sacola from './components/Sacola.js'
 import styled from "styled-components"
 import axios from "axios"
+import facebook from './img/rede__facebook.svg'
+import instagram from './img/rede__instagram.svg'
+import youtube from './img/rede__youtube.svg'
+import twitter from './img/rede__twitter.svg'
+import whatsapp from './img/rede__whatsapp.svg'
+
 import LogoVertical from "./img/LogoVertical.png"
+
 
 const MainContainer = styled.div`
 	height: 100vh;
@@ -17,12 +24,30 @@ const MainContainer = styled.div`
 	grid-template-rows: 90% 10%;
 `
 const Footer = styled.div`
+	display: flex;
+	justify-content: space-between;
 	background-color: #F2BF80;
 	grid-row-start: 2;
 	grid-row-end: 3;
 	grid-column-start: 1;
 	grid-column-end: 4;
 `
+const Icones = styled.div`
+	background-color: #F2BF80;
+`
+
+const RedesSociais = styled.img`
+	width: 3vw;
+	padding: 3px;
+	margin: 10px;
+`
+const Slogan = styled.p`
+	font-size: 22px;
+	font-weight: 700;
+	margin: 15px 10px;
+	color: #F28C0F;
+`
+
 const TelaSelecao = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -62,6 +87,31 @@ class App extends React.Component {
 	render() {
 
 		return (
+
+        <MainContainer>
+			<TelaSelecao>
+			 <p>ReTeste</p>
+			</TelaSelecao>
+			<Logo>
+			 <p>Teste</p>
+			</Logo>
+			<FiltrosSacola>
+				<p>Sacola</p>
+			</FiltrosSacola>
+			<Footer>
+			  <Icones>
+				<RedesSociais img src={facebook}></RedesSociais>
+			 	<RedesSociais img src={instagram}></RedesSociais>
+			 	<RedesSociais img src={twitter}></RedesSociais>
+			 	<RedesSociais img src={youtube}></RedesSociais>
+			 	<RedesSociais img src={whatsapp}></RedesSociais>	
+			  </Icones>	
+			  <Slogan>Personalização à sua mão!</Slogan>
+
+			</Footer>
+		</MainContainer>
+		
+
 			<MainContainer>
 				<Logo>
 					<img src={LogoVertical} />
@@ -82,6 +132,7 @@ class App extends React.Component {
 					<p>Footer</p>
 				</Footer>
 			</MainContainer>
+
 
 		)
 	}
