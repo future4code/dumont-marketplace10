@@ -89,49 +89,32 @@ class App extends React.Component {
 		return (
 
         <MainContainer>
-			<TelaSelecao>
-			 <p>ReTeste</p>
-			</TelaSelecao>
-			<Logo>
-			 <p>Teste</p>
-			</Logo>
-			<FiltrosSacola>
-				<p>Sacola</p>
-			</FiltrosSacola>
-			<Footer>
-			  <Icones>
-				<RedesSociais img src={facebook}></RedesSociais>
-			 	<RedesSociais img src={instagram}></RedesSociais>
-			 	<RedesSociais img src={twitter}></RedesSociais>
-			 	<RedesSociais img src={youtube}></RedesSociais>
-			 	<RedesSociais img src={whatsapp}></RedesSociais>	
-			  </Icones>	
-			  <Slogan>Personalização à sua mão!</Slogan>
-
-			</Footer>
-		</MainContainer>
-		
-
-			<MainContainer>
-				<Logo>
-					<img src={LogoVertical} />
-				</Logo>
-				<TelaSelecao>
-					<BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
-					<TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
-					<TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
-					<div>
-						<BotoesInicio>Quero Comprar!</BotoesInicio>
-						<BotoesInicio>Quero Vender!</BotoesInicio>
-					</div>
-				</TelaSelecao>
-				<FiltrosSacola>
-					<p>Sacola</p>
-				</FiltrosSacola>
-				<Footer>
-					<p>Footer</p>
-				</Footer>
-			</MainContainer>
+            <Logo>
+                    <img src={LogoVertical} />
+                </Logo>
+                <TelaSelecao>
+                    <BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
+                    <TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
+                    <TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
+                    <div>
+                        <BotoesInicio>Quero Comprar!</BotoesInicio>
+                        <BotoesInicio>Quero Vender!</BotoesInicio>
+                    </div>
+                </TelaSelecao>
+            <FiltrosSacola>
+                <p>Sacola</p>
+            </FiltrosSacola>
+            <Footer>
+              <Icones>
+                <RedesSociais img src={facebook}></RedesSociais>
+                <RedesSociais img src={instagram}></RedesSociais>
+                <RedesSociais img src={twitter}></RedesSociais>
+                <RedesSociais img src={youtube}></RedesSociais>
+                <RedesSociais img src={whatsapp}></RedesSociais>    
+              </Icones> 
+              <Slogan>Personalização à sua mão!</Slogan>
+            </Footer>
+        </MainContainer>
 
 
 		)
