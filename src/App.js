@@ -1,10 +1,71 @@
 import React from 'react'
-import { AppContainer } from './components/AppContainer'
+import Produtos from './components/Produtos.js'
+import CardsProdutos from './components/CardsProdutos.js'
+import Filtros from './components/Filtros.js'
+import ItensSacola from './components/ItensSacola.js'
+import Sacola from './components/Sacola.js'
+import styled from "styled-components"
+import axios from "axios"
 
-function App() {
-	return (
-        <AppContainer />
-	)
+const MainContainer = styled.div`
+	height: 100vh;
+	width: 100vw;
+	background-color: #F28C0F;
+	display: grid;
+	grid-template-columns: 15% 65% 20%;
+	grid-template-rows: 90% 10%;
+`
+const Footer = styled.div`
+	background-color: #F2BF80;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 4;
+`
+const TelaSelecao = styled.div`
+	//background-color: orange;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 2;
+	grid-column-end: 3;
+`
+const Logo = styled.div`
+	//floatbackground-color: green;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 2;
+`
+const FiltrosSacola = styled.div`
+	//background-color: darkgrey;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 3;
+	grid-column-end: 4;
+`
+
+
+class App extends React.Component {
+	render() {
+
+		return (
+        <MainContainer>
+			<TelaSelecao>
+			 <p>Teste</p>
+			</TelaSelecao>
+			<Logo>
+			 <p>Teste</p>
+			</Logo>
+			<FiltrosSacola>
+				<p>Sacola</p>
+			</FiltrosSacola>
+			<Footer>
+			 <p>Footer</p>
+			</Footer>
+		</MainContainer>
+		
+		)
+	}
 }
 
 export default App
