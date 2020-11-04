@@ -12,6 +12,8 @@ import youtube from './img/rede__youtube.svg'
 import twitter from './img/rede__twitter.svg'
 import whatsapp from './img/rede__whatsapp.svg'
 
+import LogoVertical from "./img/LogoVertical.png"
+
 
 const MainContainer = styled.div`
 	height: 100vh;
@@ -47,18 +49,16 @@ const Slogan = styled.p`
 `
 
 const TelaSelecao = styled.div`
-	//background-color: orange;
-	grid-row-start: 1;
-	grid-row-end: 2;
-	grid-column-start: 2;
-	grid-column-end: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 `
 const Logo = styled.div`
-	//floatbackground-color: green;
-	grid-row-start: 1;
-	grid-row-end: 2;
-	grid-column-start: 1;
-	grid-column-end: 2;
+	display: flex;
+	justify-content: flex-start;
+	height: 50vh;
+	align-items: flex-end;
 `
 const FiltrosSacola = styled.div`
 	//background-color: darkgrey;
@@ -68,11 +68,26 @@ const FiltrosSacola = styled.div`
 	grid-column-end: 4;
 `
 
+const BoasVindas = styled.h2`
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+`
+
+const TextoIntroducao = styled.h3`
+	text-align: center;
+`
+
+const BotoesInicio = styled.button`
+	margin: 6px;
+	background-color: #59D9D9;
+`
 
 class App extends React.Component {
 	render() {
 
 		return (
+
         <MainContainer>
 			<TelaSelecao>
 			 <p>ReTeste</p>
@@ -96,6 +111,29 @@ class App extends React.Component {
 			</Footer>
 		</MainContainer>
 		
+
+			<MainContainer>
+				<Logo>
+					<img src={LogoVertical} />
+				</Logo>
+				<TelaSelecao>
+					<BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
+					<TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
+					<TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
+					<div>
+						<BotoesInicio>Quero Comprar!</BotoesInicio>
+						<BotoesInicio>Quero Vender!</BotoesInicio>
+					</div>
+				</TelaSelecao>
+				<FiltrosSacola>
+					<p>Sacola</p>
+				</FiltrosSacola>
+				<Footer>
+					<p>Footer</p>
+				</Footer>
+			</MainContainer>
+
+
 		)
 	}
 }
