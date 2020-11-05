@@ -9,6 +9,9 @@ class TelaCadastro extends React.Component {
 		descricao: "",
 		preco: "",
 		imagem: "",
+		categoria: "",
+		metodo: "",
+		parcelas:"",
 	}
 
 	onChangeNome= (event) => {
@@ -25,6 +28,17 @@ class TelaCadastro extends React.Component {
 
 	  onChangeImagem = (event) => {
 		  this.setState({imagem: event.target.value})
+	  }
+	  onChangeCategoria = (event) =>{
+		  this.setState({categoria: event.target.value})
+	  }
+
+	  onChangeMetodo = (event) =>{
+		  this.setState({metodo: event.target.value})
+	  }
+
+	  onChangeParcelas = (event) =>{
+		  this.setState({parcelas: event.target.value})
 	  }
 
 	render() {
@@ -46,7 +60,7 @@ class TelaCadastro extends React.Component {
 			onChange={this.onChangeDescricao}></input>
 
 			<label>Escolha uma categoria:</label>
-			<select>				
+			<select onChange={this.onChangeCategoria}>				
 				<option value="festas">Artigos para festa</option>
 				<option value="decoracao">Objetos de Decoração</option>
 				<option value="bijuteria">Bijuteria</option>
@@ -56,7 +70,7 @@ class TelaCadastro extends React.Component {
 			</select>
 
 			<label>Escolha o método de pagamento:</label>
-			<select>
+			<select onChange={this.onChangeMetodo}>
 				<option value="debito">Cartão de Débito</option>
 				<option value="credito">Cartão de Crédito</option>
 				<option value="boleto">Boleto Bancário</option>
@@ -66,7 +80,7 @@ class TelaCadastro extends React.Component {
 			onChange={this.onChangePreco}></input>
 
 			<label>Escolha o número de parcelas:</label>
-			<select>				
+			<select onChange={this.onChangeParcelas}>				
 				<option value="1">A vista</option>
 				<option value="2">2 vezes</option>
 				<option value="3">3 vezes</option>
