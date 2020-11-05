@@ -89,12 +89,18 @@ class App extends React.Component {
 		return (
 
         <MainContainer>
-			<TelaSelecao>
-			 <p>ReTeste</p>
-			</TelaSelecao>
 			<Logo>
-			 <p>Teste</p>
-			</Logo>
+					<img src={LogoVertical} />
+				</Logo>
+				<TelaSelecao>
+					<BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
+					<TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
+					<TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
+					<div>
+						<BotoesInicio>Quero Comprar!</BotoesInicio>
+						<BotoesInicio>Quero Vender!</BotoesInicio>
+					</div>
+				</TelaSelecao>
 			<FiltrosSacola>
 				<p>Sacola</p>
 			</FiltrosSacola>
@@ -110,28 +116,6 @@ class App extends React.Component {
 
 			</Footer>
 		</MainContainer>
-		
-
-			<MainContainer>
-				<Logo>
-					<img src={LogoVertical} />
-				</Logo>
-				<TelaSelecao>
-					<BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
-					<TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
-					<TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
-					<div>
-						<BotoesInicio>Quero Comprar!</BotoesInicio>
-						<BotoesInicio>Quero Vender!</BotoesInicio>
-					</div>
-				</TelaSelecao>
-				<FiltrosSacola>
-					<p>Sacola</p>
-				</FiltrosSacola>
-				<Footer>
-					<p>Footer</p>
-				</Footer>
-			</MainContainer>
 
 
 		)
