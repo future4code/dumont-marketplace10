@@ -99,11 +99,11 @@ class TelaCadastro extends React.Component {
 			<input 
 			placeholder="Digite a url da imagem do produto"
 			onChange={this.onChangeImagem}></input>
-			<button>Cadastrar</button><button>Voltar</button>
+			<button>Cadastrar</button>
+			<button onClick={this.props.botaoVoltar}>Voltar</button>
 		</div>	
 		)
 	}
 
 }
-
 export default TelaCadastro
