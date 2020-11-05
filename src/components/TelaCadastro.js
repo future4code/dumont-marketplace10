@@ -138,10 +138,12 @@ class TelaCadastro extends React.Component {
           onChange={this.onChangeImagem}
         ></input>
         <button onClick={this.criaProdutos}>Cadastrar</button>
-        <button>Voltar</button>
+        <button onClick={this.props.botaoVoltar}>Voltar</button>
       </div>
     );
   }
 }
 
 export default TelaCadastro;
+
+	
