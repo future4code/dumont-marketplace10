@@ -4,6 +4,8 @@ import CardsProdutos from './components/CardsProdutos.js'
 import Filtros from './components/Filtros.js'
 import ItensSacola from './components/ItensSacola.js'
 import Sacola from './components/Sacola.js'
+import TelaCadastro from "./components/TelaCadastro"
+import Home from "./components/Home"
 import styled from "styled-components"
 import axios from "axios"
 import facebook from './img/rede__facebook.svg'
@@ -11,8 +13,6 @@ import instagram from './img/rede__instagram.svg'
 import youtube from './img/rede__youtube.svg'
 import twitter from './img/rede__twitter.svg'
 import whatsapp from './img/rede__whatsapp.svg'
-import TelaCadastro from "./components/TelaCadastro"
-import TelaSelecao from "./components/TelaSelecao"
 import LogoVertical from "./img/LogoVertical.png"
 
 
@@ -23,6 +23,7 @@ const MainContainer = styled.div`
 	display: grid;
 	grid-template-columns: 15% 65% 20%;
 	grid-template-rows: 90% 10%;
+	overflow-x: auto;
 `
 const Footer = styled.div`
 	display: flex;
@@ -74,22 +75,69 @@ const FiltrosSacola = styled.div`
 	grid-column-start: 3;
 	grid-column-end: 4;
 `
+const BoasVindas = styled.h2`
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+`
 
+const TextoIntroducao = styled.h3`
+	text-align: center;
+`
 
+const BotoesInicio = styled.button`
+	width: 95px;
+	height: 45px;
+	margin: 6px 15px;
+	border-radius: 8%;
+	background-color: #59D9D9;
+`
 
-//let telaExibida = {<TelaSelecao/>}
 
 class App extends React.Component {
+
+	state = {
+		filtro: false,
+		sacola: false,
+		gridcentral: "selecao",
+	}
+
+	irParaCadastro = () => {
+        this.setState({ gridcentral: "cadastro" });
+        console.log("Entrou na função")
+	  };
+	
+	irParaProdutos = () => {
+		this.setState({ gridcentral: "produto" });
+	  };
+
 	render() {
 
-		return (
+		const renderizaTelaCorreta = () => {
+			switch (this.state.gridcentral) {
+				case "selecao":
+					return <Home botaoCadastro={this.irParaCadastro} botaoProdutos={this.irParaProdutos}/>
+					break;
+				case "cadastro":
+					return <TelaCadastro/>
+					break;
+				case "produto":
+					return <Produtos/>
+					break;
+				default:
+					break;
+			}
+		}
 
-        <MainContainer>
+		return (
+		
+		<MainContainer>
+
             <Logo>
-                    <img src={LogoVertical} />
+                <img src={LogoVertical} />
                 </Logo>
                 <ContainerCentral>
-					<Produtos/>
+					{renderizaTelaCorreta()}
                 </ContainerCentral>
             <FiltrosSacola>
                 <Filtros/>
