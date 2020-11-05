@@ -75,6 +75,8 @@ class TelaCadastro extends React.Component {
 				<option value="credito">Cartão de Crédito</option>
 				<option value="boleto">Boleto Bancário</option>
 			</select>
+
+			<label>Digite o preço em R$:</label>
 			<input 
 			placeholder="Digite o preço em R$"
 			onChange={this.onChangePreco}></input>
