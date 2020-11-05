@@ -89,7 +89,7 @@ class App extends React.Component {
                     <img src={LogoVertical} />
                 </Logo>
                 <ContainerCentral>
-					<Produtos/>
+					<TelaCadastro/>
                 </ContainerCentral>
             <FiltrosSacola>
                 <Filtros/>
