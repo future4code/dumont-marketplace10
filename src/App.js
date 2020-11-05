@@ -21,7 +21,7 @@ const MainContainer = styled.div`
 	width: 100vw;
 	background-color: #f2970b;
 	display: grid;
-	grid-template-columns: 15% 65% 20%;
+	grid-template-columns: 12% 88%;
 	grid-template-rows: 90% 10%;
 	overflow-x: auto;
 `
@@ -32,7 +32,7 @@ const Footer = styled.div`
 	grid-row-start: 2;
 	grid-row-end: 3;
 	grid-column-start: 1;
-	grid-column-end: 4;
+	grid-column-end: 3;
 `
 const Icones = styled.div`
 	background-color: #F2BF80;
@@ -63,36 +63,16 @@ const ContainerCentral = styled.div`
 	color: white;
 `
 const Logo = styled.div`
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 2;
 	margin: 45px 5px;
 	display: flex;
 	justify-content: flex-start;
 	height: 50vh;
 	align-items: flex-end;
 `
-const FiltrosSacola = styled.div`
-	grid-row-start: 1;
-	grid-row-end: 2;
-	grid-column-start: 3;
-	grid-column-end: 4;
-`
-const BoasVindas = styled.h2`
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-`
-
-const TextoIntroducao = styled.h3`
-	text-align: center;
-`
-
-const BotoesInicio = styled.button`
-	width: 95px;
-	height: 45px;
-	margin: 6px 15px;
-	border-radius: 8%;
-	background-color: #59D9D9;
-`
-
 
 class App extends React.Component {
 
@@ -111,6 +91,11 @@ class App extends React.Component {
 		this.setState({ gridcentral: "produto" });
 	  };
 
+	irParaSelecao = () => {
+		this.setState({ gridcentral: "selecao" });
+	  };
+
+
 	render() {
 
 		const renderizaTelaCorreta = () => {
@@ -119,7 +104,7 @@ class App extends React.Component {
 					return <Home botaoCadastro={this.irParaCadastro} botaoProdutos={this.irParaProdutos}/>
 					break;
 				case "cadastro":
-					return <TelaCadastro/>
+					return <TelaCadastro botaoVoltar={this.irParaSelecao} />
 					break;
 				case "produto":
 					return <Produtos/>
@@ -134,15 +119,11 @@ class App extends React.Component {
 		<MainContainer>
 
             <Logo>
-                <img src={LogoVertical} />
-                </Logo>
-                <ContainerCentral>
-					{renderizaTelaCorreta()}
-                </ContainerCentral>
-            <FiltrosSacola>
-                <Filtros/>
-				<Sacola/>
-            </FiltrosSacola>
+              <img src={LogoVertical} />
+            </Logo>
+            <ContainerCentral>
+			  {renderizaTelaCorreta()}
+            </ContainerCentral>
             <Footer>
               <Icones>
 				<a href="https://www.facebook.com/" target="blank">

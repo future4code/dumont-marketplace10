@@ -44,7 +44,8 @@ class TelaCadastro extends React.Component {
 				<option value="12">12 vezes</option>
 			</select>
 			<input placeholder="Digite a url da imagem do produto"></input>
-			<button>Cadastrar</button><button>Voltar</button>
+			<button>Cadastrar</button>
+			<button onClick={this.props.botaoVoltar}>Voltar</button>
 		</div>	
 		)
 	}
