@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
 import axios from "axios"
+import TelaCadastro from "./TelaCadastro"
+import Produtos from './Produtos'
+
 
 const BoasVindas = styled.h2`
 	display: flex;
@@ -20,23 +23,23 @@ const BotoesInicio = styled.button`
 	background-color: #59D9D9;
 `
 
-class TelaSelecao extends React.Component {
-	
-	render() {
+class Home extends React.Component{
 
-		return(
-		<div>
-		 <BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
+    render() {
+        return (
+        <div>
+          <BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
           <TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
           <TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
           <div>
-			<BotoesInicio>Quero Comprar!</BotoesInicio>
-            <BotoesInicio>Quero Vender!</BotoesInicio>
+			<BotoesInicio onClick = {this.props.botaoProdutos}>Quero Comprar!</BotoesInicio>
+            <BotoesInicio onClick={this.props.botaoCadastro}>Quero Vender!</BotoesInicio>
           </div>
-		</div>	
-		)
-	}
-
+        </div>
+        )
+    }
 }
 
-export default TelaSelecao
+
+
+export default Home
