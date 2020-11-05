@@ -3,6 +3,30 @@ import styled from "styled-components"
 import axios from "axios"
 
 class TelaCadastro extends React.Component {
+
+	state = {
+		nome: "",
+		descricao: "",
+		preco: "",
+		imagem: "",
+	}
+
+	onChangeNome= (event) => {
+		this.setState({ nome: event.target.value });
+	  };
+	
+	  onChangeDescricao = (event) => {
+		this.setState({ descricao: event.target.value });
+	  };
+
+	  onChangePreco = (event) => {
+		  this.setState({preco: event.target.value})
+	  }
+
+	  onChangeImagem = (event) => {
+		  this.setState({imagem: event.target.value})
+	  }
+
 	render() {
 
 		return(
@@ -10,10 +34,19 @@ class TelaCadastro extends React.Component {
 			<h2>Olá lojista!</h2>
 			<h2>Aqui é o seu espaço!</h2>
 			<h3>Cadastre aqui os dados do seu produto.</h3>
-			<input placeholder="Digite o nome do produto"></input>
-			<input placeholder="Escreve a descrição do produto"></input>
-			<select>
-				<option value="">Escola a categoria:</option>
+
+			<label>Digite o nome do produto:</label>
+			<input
+			 placeholder="Digite o nome do produto"
+			 onChange={this.onChangeNome}></input>
+
+			 <label>Descreva o produto:</label>
+			<input 
+			placeholder="Escreve a descrição do produto"
+			onChange={this.onChangeDescricao}></input>
+
+			<label>Escolha uma categoria:</label>
+			<select>				
 				<option value="festas">Artigos para festa</option>
 				<option value="decoracao">Objetos de Decoração</option>
 				<option value="bijuteria">Bijuteria</option>
@@ -21,16 +54,20 @@ class TelaCadastro extends React.Component {
 				<option value="enxovais">Enxovais</option>
 				<option value="ecofriendly">Acessórios Eco-friendly</option>
 			</select>
+
+			<label>Escolha o método de pagamento:</label>
 			<select>
-				<option value="">Escola o métdo de pagamento:</option>
 				<option value="debito">Cartão de Débito</option>
 				<option value="credito">Cartão de Crédito</option>
 				<option value="boleto">Boleto Bancário</option>
 			</select>
-			<input placeholder="Digite o preço em R$"></input>
-			<select>
-				<option value="">Escolha o número máximo de parcelas:</option>
-				<option value="1">Á vista</option>
+			<input 
+			placeholder="Digite o preço em R$"
+			onChange={this.onChangePreco}></input>
+
+			<label>Escolha o número de parcelas:</label>
+			<select>				
+				<option value="1">A vista</option>
 				<option value="2">2 vezes</option>
 				<option value="3">3 vezes</option>
 				<option value="4">4 vezes</option>
@@ -43,7 +80,11 @@ class TelaCadastro extends React.Component {
 				<option value="11">11 vezes</option>
 				<option value="12">12 vezes</option>
 			</select>
-			<input placeholder="Digite a url da imagem do produto"></input>
+
+			<label>Digite a URL da imagem:</label>
+			<input 
+			placeholder="Digite a url da imagem do produto"
+			onChange={this.onChangeImagem}></input>
 			<button>Cadastrar</button><button>Voltar</button>
 		</div>	
 		)
