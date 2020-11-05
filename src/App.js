@@ -41,6 +41,7 @@ const RedesSociais = styled.img`
 	width: 3vw;
 	padding: 3px;
 	margin: 10px;
+	:hover{width:4vw};
 `
 const Slogan = styled.p`
 	font-size: 22px;
@@ -96,11 +97,21 @@ class App extends React.Component {
             </FiltrosSacola>
             <Footer>
               <Icones>
-                <RedesSociais img src={facebook}></RedesSociais>
-                <RedesSociais img src={instagram}></RedesSociais>
-                <RedesSociais img src={twitter}></RedesSociais>
-                <RedesSociais img src={youtube}></RedesSociais>
-                <RedesSociais img src={whatsapp}></RedesSociais>    
+				<a href="https://www.facebook.com/" target="blank">
+					<RedesSociais img src={facebook}></RedesSociais>
+				</a>
+                <a href="https://www.instagram.com/" target="blank">
+					<RedesSociais img src={instagram}></RedesSociais>
+				</a>
+                <a href="https://twitter.com/" target="blank">
+					<RedesSociais img src={twitter}></RedesSociais>
+				</a>
+                <a href="https://www.youtube.com/" target="blank">
+					<RedesSociais img src={youtube}></RedesSociais>
+				</a>
+				<a href="https://web.whatsapp.com/" target="blank">
+					<RedesSociais img src={whatsapp}></RedesSociais> 
+				</a>
               </Icones> 
               <Slogan>Personalização à sua mão!</Slogan>
             </Footer>
