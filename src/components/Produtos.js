@@ -66,12 +66,7 @@ const FiltrosSacola = styled.div`
 class Produtos extends React.Component {
 
   state = {
-    order: 'NOME'
-  }
-  
-  onChange = (event) => {
-    const choice = event.target.value
-    this.setState({order: choice})
+    order: 'NOME',
   }
 
   render() {

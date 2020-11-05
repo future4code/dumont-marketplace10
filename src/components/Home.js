@@ -16,11 +16,18 @@ const TextoIntroducao = styled.h3`
 `
 
 const BotoesInicio = styled.button`
+  display: inline;
 	width: 95px;
 	height: 45px;
 	margin: 6px 15px;
 	border-radius: 8%;
 	background-color: #59D9D9;
+`
+
+const BotoesDiv = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
 `
 
 class Home extends React.Component{
@@ -31,10 +38,10 @@ class Home extends React.Component{
           <BoasVindas>Bem vindo(a) ao Elo4!</BoasVindas>
           <TextoIntroducao>A maior rede de compra e venda de produtos artesanais do Brasil!</TextoIntroducao>
           <TextoIntroducao>Escolha o que deseja fazer:</TextoIntroducao>
-          <div>
+          <BotoesDiv>
 			<BotoesInicio onClick = {this.props.botaoProdutos}>Quero Comprar!</BotoesInicio>
             <BotoesInicio onClick={this.props.botaoCadastro}>Quero Vender!</BotoesInicio>
-          </div>
+          </BotoesDiv>
         </div>
         )
     }
