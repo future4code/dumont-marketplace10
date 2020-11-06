@@ -2,14 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-
 const CardContainer = styled.div`
 border: 2px solid;
-display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-/* display: flex;
+display: flex;
 flex-direction: column;
-align-items: center; */
+align-items: center;
 cursor: pointer;
 margin: 12px;
 &:hover {
@@ -35,7 +32,7 @@ const CardProdutos = (props) => {
         <CardText>{props.preco}</CardText>
         <CardText>{props.parcelas}</CardText>
         <CardText>{props.metodo}</CardText>
-        <button>Adicionar à Sacola</button>
+        <button onClick = {() => props.addToCart(props.id)}>Adicionar à Sacola</button>
       </CardContainer>
     );
   };

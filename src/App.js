@@ -23,7 +23,7 @@ const MainContainer = styled.div`
 	display: grid;
 	grid-template-columns: 12% 88%;
 	grid-template-rows: 90% 10%;
-	overflow-x: auto;
+
 `
 const Footer = styled.div`
 	display: flex;
@@ -83,6 +83,8 @@ const Logo = styled.div`
 	height: 50vh;
 	align-items: flex-end;
 `
+
+
 
 class App extends React.Component {
 
