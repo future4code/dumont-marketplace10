@@ -33,6 +33,10 @@ const Footer = styled.div`
 	grid-row-end: 3;
 	grid-column-start: 1;
 	grid-column-end: 3;
+	position: fixed;
+	bottom: 0;
+  	left: 0;
+	width: 100vw;
 `
 const Icones = styled.div`
 	background-color: #F2BF80;
