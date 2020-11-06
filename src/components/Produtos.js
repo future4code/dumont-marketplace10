@@ -48,13 +48,14 @@ class Produtos extends React.Component {
   state = {
     order: 'NOME',
     produtos: [],
+    novoProduto: [],
   }
 
   componentDidMount() {
     this.pegaProdutos()
   }
 
-
+  
   onChange = (event) => {
       const escolha = event.target.value
       this.setState({order: escolha})
@@ -80,8 +81,6 @@ class Produtos extends React.Component {
     return newArray
   }
 
-
-
   pegaProdutos = () => {
 		
 		axios
@@ -96,8 +95,33 @@ class Produtos extends React.Component {
 			});
 	};
 
+  addToCart = (id) => {
+    const sacolaArray = this.state.produtos.filter((produto) => {
+      if (produto.id === id) {
+        return true
+      }
+    })
+    this.setState({novoProduto: this.state.novoProduto.push(sacolaArray)})
+    console.log("Depois:", this.state.novoProduto)
+    return this.state.novoProduto
+  }
+
+ /*  removeItem = (id) => {
+    const cartArray = this.state.productsArray.map((product) => {
+      if (product.id === id) {
+        const newProduct = { ...product, quantity: 0}
+        return newProduct
+      } else {
+        return product
+      }
+    })
+    this.setState({ productsArray: cartArray })
+  }
+ */
+
   render() {
     const arrayOrdernado = this.orderArray()
+    const arraySacola = this.addToCart()
     const ListaDeProdutos = this.state.produtos.map((produto) => {
       return (
         <CardsProdutos
@@ -107,6 +131,8 @@ class Produtos extends React.Component {
           preco={produto.price}
           parcelas={produto.installments}
           metodo={produto.paymentMethod}
+          id={produto.id}
+          addToCart={this.addToCart}
         />
       );
     });
@@ -128,7 +154,9 @@ class Produtos extends React.Component {
              {ListaDeProdutos}
             <FiltrosSacola>
               <Filtros/>
-				      <Sacola/>
+				      <Sacola
+                array={arraySacola}
+              />
             </FiltrosSacola>
         </CardsContainer>
         

@@ -21,15 +21,8 @@ class Sacola extends React.Component {
         return(
             <SacolaContainer>
                 <SacolaImagem img src={IconeSacolas}/>
-                <p>Mesa de Jardim</p>
-                <p>R$367,00</p>
-                <p>2x</p>
-                <button>+</button>
-                <button>-</button>
-                <button>x</button>
-                <h3>Valor Total:</h3>
-                <h3>R$100,00</h3>
-                <button>Comprar</button>
+                 {this.props.array}
+                 <button>Comprar</button>
             </SacolaContainer>
         
         )
