@@ -61,7 +61,7 @@ class TelaCadastro extends React.Component {
 			"price": Number(this.state.preco),
 			"paymentMethod": this.state.metodo,
 			"category": this.state.categoria,
-			"photos": this.state.imagem,
+			"photos": [this.state.imagem],
 			"installments": Number(this.state.parcelas)
 		}
 		axios
