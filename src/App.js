@@ -37,12 +37,18 @@ const Footer = styled.div`
 const Icones = styled.div`
 	background-color: #F2BF80;
 `
-
 const RedesSociais = styled.img`
-	width: 3vw;
+	width: 2.7vw;
 	padding: 3px;
 	margin: 10px;
-	:hover{width:4vw};
+	border: solid;
+	border-color: #F2BF80;
+	:hover{
+	  cursor: pointer;
+	  border-style: groove;
+	  border-radius: 50%;
+	  border-color: #59D9D9;
+	};
 `
 const Slogan = styled.p`
 	font-size: 22px;
